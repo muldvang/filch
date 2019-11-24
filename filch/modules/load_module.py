@@ -10,6 +10,7 @@ def run(callback):
             callback(text=' ' + loadavg, color='#A52A2A')
             time.sleep(1)
         else:
+            callback(text='', color=None)
             time.sleep(10)
 
 def load():
