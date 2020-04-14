@@ -5,7 +5,7 @@ def run(callback):
     while True:
         text = current()
         if text:
-            callback(text='🎵 ' + text)
+            callback(text='🎜 ' + text)
         else:
             callback(text='')
         time.sleep(10)
