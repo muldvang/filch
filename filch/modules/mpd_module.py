@@ -23,4 +23,4 @@ def current():
 
 
 def wait_for_change():
-    subprocess.run(["mpc", "idle"])
+    subprocess.run(["mpc", "idle"], stdout=subprocess.PIPE)
