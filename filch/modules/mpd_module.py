@@ -8,7 +8,6 @@ def run(callback):
             callback(text='🎜 ' + text)
         else:
             callback(text='')
-        time.sleep(10)
 
 def current():
-    return subprocess.run(["mpc", "current"], stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
+    return subprocess.run(["mpc", "current", "--wait"], stdout=subprocess.PIPE).stdout.decode("utf-8").strip()
