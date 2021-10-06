@@ -1,6 +1,7 @@
 import subprocess
 import pulsectl
 
+
 def run(callback):
     callback(text())
 
@@ -13,17 +14,20 @@ def run(callback):
         pulse.event_callback_set(update)
         pulse.event_listen()
 
+
 def text():
     return '墳 ' + sink() + ': ' + volume() + ' %'
+
 
 def sink():
     bash_script = '''
     PAC=$(pacmd list-sinks | grep -P "\*" --after-context 36)
-    SINK=$(pacmd list-sinks | grep -P "\*" --after-context 1000| grep 'device.description' | head -n1 | cut -d '"' -f 2 | sed 's/ Audio Analog Stereo//g')
+    SINK=$(pacmd list-sinks | grep -P "\*" --after-context 1000| grep 'device.description' | head -n1 | cut -d '"' -f 2 | sed 's/ Audio Analog Stereo//g' | sed 's/ Series Analog Stereo//g')
     echo -n "$SINK"
     '''
     process = subprocess.run(['bash', '-c', bash_script], stdout=subprocess.PIPE)
     return process.stdout.decode('utf-8')
+
 
 def volume():
     bash_script = '''
