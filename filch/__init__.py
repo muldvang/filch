@@ -3,7 +3,7 @@ import sys
 import time
 from threading import Thread
 from . import updater
-from .modules import audio_module, time_module, dropbox_module, wlan_module, internet_module,\
+from .modules import audio_module, time_module, dropbox_module, wlan_module,\ #internet_module,\
      battery_module, load_module
 
 def run():
