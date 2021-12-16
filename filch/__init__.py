@@ -3,7 +3,7 @@ import sys
 import time
 from threading import Thread
 from . import updater
-from .modules import audio_module, time_module, dropbox_module, wlan_module,\ #internet_module,\
+from .modules import audio_module, time_module, dropbox_module, wlan_module, internet_module,\
      battery_module, load_module
 
 def run():
@@ -11,7 +11,9 @@ def run():
     sys.stdout.write('[\n')
     sys.stdout.write('[]\n')
 
-    MODULES = [dropbox_module, audio_module, wlan_module, internet_module, battery_module, load_module, time_module]
+    MODULES = [dropbox_module, audio_module, wlan_module,
+               # internet_module,
+               battery_module, load_module, time_module]
     MODULE_NAMES = {module:'Module of ' + str(module) for module in MODULES}
 
     UPDATER = updater.Updater(MODULE_NAMES.values())
