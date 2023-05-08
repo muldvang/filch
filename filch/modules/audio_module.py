@@ -16,8 +16,7 @@ def run(callback):
 
 
 def text():
-    return '墳 ' + sink() + ': ' + volume() + ' %'
-
+    return ' ' + sink() + ': ' + volume() + ' %'
 
 def sink():
     bash_script = '''

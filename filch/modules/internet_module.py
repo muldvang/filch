@@ -15,7 +15,7 @@ def text(con):
     if con:
         return ''
     else:
-        return ' No internet connection'
+        return '󰀦 No internet connection'
 
 def color(con):
     if con:
