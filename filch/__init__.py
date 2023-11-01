@@ -4,14 +4,14 @@ import time
 from threading import Thread
 from . import updater
 from .modules import audio_module, time_module, dropbox_module, wlan_module, internet_module,\
-     battery_module, load_module
+     battery_module, load_module, ms_teams_module
 
 def run():
     sys.stdout.write('{"version":1}\n')
     sys.stdout.write('[\n')
     sys.stdout.write('[]\n')
 
-    MODULES = [dropbox_module, audio_module, wlan_module,
+    MODULES = [audio_module, ms_teams_module, wlan_module,
                # internet_module,
                battery_module, load_module, time_module]
     MODULE_NAMES = {module:'Module of ' + str(module) for module in MODULES}
