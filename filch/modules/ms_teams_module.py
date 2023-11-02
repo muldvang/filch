@@ -7,5 +7,7 @@ def run(callback):
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         if result.stdout:
             callback(text = '󰊻', color = '#A52A2A')
+        else:
+            callback('')
 
         time.sleep(60)
