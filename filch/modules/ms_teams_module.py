@@ -6,8 +6,6 @@ def run(callback):
     while True:
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         if result.stdout:
-            formatted = f'󰊻 {result.stdout}'
-        else:
-            formatted = '󰊻 No notifications'
-        callback(formatted)
+            callback(text = '󰊻', color = '#A52A2A')
+
         time.sleep(60)
